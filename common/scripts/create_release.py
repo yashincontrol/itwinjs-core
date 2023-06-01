@@ -91,17 +91,15 @@ def createRelease(tag):
   else:
     # If major/minor release, grab corresponding markdown from ./docs/changehistory
     fileName = "docs/changehistory/{0}.md".format(currentVer)
-    print(fileName)
     if not os.path.exists(fileName):
-      print("changehistory could not be found.. exiting")
+      print("changehistory {0} could not be found.. exiting".format(currentVer))
       return
-    replace_image_links(fileName)
 
-  # # Create GitHub release using the markdown file
-  # print("Publishing GitHub release...")
-  # cmd = ['gh', 'release', 'create', tag, '-F', './' + fileName, '-t', '"v{0}"'.format(currentVer)]
-  # proc = subprocess.Popen(" ".join(cmd), stdin = subprocess.PIPE, stdout = subprocess.PIPE, shell=True)
-  # proc.wait()
+  # Create GitHub release using the markdown file
+  print("Publishing GitHub release...")
+  cmd = ['gh', 'release', 'create', tag, '-F', './' + fileName, '-t', '"v{0}"'.format(currentVer)]
+  proc = subprocess.Popen(" ".join(cmd), stdin = subprocess.PIPE, stdout = subprocess.PIPE, shell=True)
+  proc.wait()
 
 # Validate arguments
 if len(sys.argv) != 2:

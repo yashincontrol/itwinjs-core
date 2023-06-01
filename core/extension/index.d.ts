@@ -4,7 +4,7 @@
 *--------------------------------------------------------------------------------------------*/
 
 // manually curated section
-export function registerTool(t: typeof import("@itwin/core-frontend").Tool): Promise<void>
+
 // these types are needed for ExtensionHost
 import type {
 	ToolAdmin,
@@ -53,6 +53,7 @@ export {
 	CoordSource,
 	CoordSystem,
 	CoordinateLockOverrides,
+	DecorateContext,
 	Decorations,
 	DisclosedTileTreeSet,
 	DisplayStyle2dState,
@@ -111,6 +112,7 @@ export {
 	NotificationHandler,
 	NotificationManager,
 	NotifyMessageDetails,
+	OffScreenViewport,
 	OrthographicViewState,
 	OutputMessageAlert,
 	OutputMessagePriority,
@@ -121,10 +123,12 @@ export {
 	Pixel,
 	PrimitiveTool,
 	RenderClipVolume,
+	RenderContext,
 	RenderGraphic,
 	RenderGraphicOwner,
 	RenderSystem,
 	Scene,
+	ScreenViewport,
 	SectionDrawingModelState,
 	SelectionMethod,
 	SelectionMode,
@@ -190,6 +194,7 @@ export {
 	ViewStatus,
 	ViewTool,
 	ViewingSpace,
+	Viewport,
 	canvasToImageBuffer,
 	canvasToResizedCanvasWithBars,
 	connectViewportFrusta,
@@ -206,6 +211,7 @@ export {
 	imageElementFromUrl,
 	queryTerrainElevationOffset,
 	readElementGraphics,
+	readGltfGraphics,
 	synchronizeViewportFrusta,
 	synchronizeViewportViews
 } from "@itwin/core-frontend";
@@ -267,6 +273,7 @@ export type {
 	ParticleCollectionBuilderParams,
 	ParticleProps,
 	PickableGraphicOptions,
+	ReadGltfGraphicsArgs,
 	ScreenSpaceEffectBuilder,
 	ScreenSpaceEffectBuilderParams,
 	ScreenSpaceEffectContext,
